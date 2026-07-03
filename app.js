@@ -412,7 +412,7 @@ async function handleClick() {
     nameInput.value = currentPlayerName;
     seedInput.value = "";
     gameScreen.hidden = true;
-    introScreen.hidden = false;
+    introScreen.style.display = "";
     uiState = "waiting-intro";
     return;
   }
