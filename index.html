@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bola da Sorte — Simulador de Carreira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="stage">
+    <section class="intro-screen" id="intro-screen">
+      <span class="hud-eyebrow">SIMULADOR DE CARREIRA</span>
+      <h1 class="intro-title">Bola&nbsp;da&nbsp;Sorte</h1>
+      <p class="intro-copy">Uma jornada que começa desde os 17 anos, sorteada em tempo real — clubes, títulos e a tão sonhada Bola de Ouro.</p>
+
+      <label class="field-label" for="player-name">Seu nome (aparece na camisa)</label>
+      <input class="field-input" id="player-name" type="text" maxlength="20" placeholder="Ex: Jhon" autocomplete="off" />
+
+      <label class="field-label" for="seed-input">Seed <span class="field-optional">(opcional)</span></label>
+      <input class="field-input" id="seed-input" type="text" maxlength="24" placeholder="Deixe em branco pra aleatório" autocomplete="off" />
+
+      <button id="intro-start-btn" class="cta">COMEÇAR CARREIRA</button>
+    </section>
+
+    <section class="game-screen" id="game-screen" hidden>
+      <header class="hud">
+        <div class="hud-brand">
+          <span class="hud-eyebrow" id="hud-eyebrow">SIMULADOR DE CARREIRA</span>
+          <h1>Bola&nbsp;da&nbsp;Sorte</h1>
+        </div>
+        <div class="hud-age">
+          <span class="hud-age-label">IDADE</span>
+          <span class="hud-age-value" id="age-value">17</span>
+        </div>
+      </header>
+
+      <section class="road-wrap" aria-label="Trajetória da carreira">
+        <ol class="road" id="road"></ol>
+      </section>
+
+      <section class="pack-zone">
+        <div class="pack-card" id="pack-card">
+          <div class="pack-inner">
+            <div class="pack-face pack-sealed">
+              <span class="pack-shine"></span>
+              <span class="pack-icon" id="pack-icon">⚽</span>
+              <span class="pack-caption" id="pack-caption">Sorteando…</span>
+            </div>
+            <div class="pack-face pack-revealed" id="pack-revealed"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-card" id="final-card" hidden>
+        <div class="final-header">
+          <span class="final-eyebrow" id="final-verdict">—</span>
+          <h2>Cartão da Carreira</h2>
+          <p class="final-sub" id="final-sub">17 → 35 anos</p>
+        </div>
+
+        <div class="final-stats" id="final-stats"></div>
+
+        <div class="final-trophies" id="final-trophies"></div>
+
+        <button id="save-image-btn" class="cta cta-secondary">📸 Salvar imagem da carreira</button>
+      </section>
+
+      <footer class="controls">
+        <button id="start-btn" class="cta">CONTINUAR</button>
+      </footer>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
