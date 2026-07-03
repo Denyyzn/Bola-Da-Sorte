@@ -325,7 +325,7 @@ async function* runCareer() {
   if (worldCup) confettiBurst();
   yield { label: "CONTINUAR" };
 
-  const ballonDorChance = Math.floor((gols + assis) / 10 + (gols + assis) / (matches / 10));
+  const ballonDorChance = Math.floor((gols + assis) / 10);
   const ballonDor = random(1, 100) < ballonDorChance;
   results.nBallonDor = ballonDor ? random(1, 8) : 0;
   results.ballonDor = ballonDor;
