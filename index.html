@@ -7,7 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#0e2019" />
+  <link rel="apple-touch-icon" href="./icons/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
 <body>
   <canvas id="confetti-canvas"></canvas>
@@ -76,6 +81,13 @@
     </section>
   </div>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="src/app.js"></script>
+  <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").catch(console.error);
+        });
+      }
+  </script>
 </body>
 </html>

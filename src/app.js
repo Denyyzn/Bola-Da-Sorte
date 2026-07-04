@@ -1,5 +1,5 @@
-import { clubs } from "./clubs.js";
-import { shirts } from "./shirts.js";
+import { clubs } from "./data/clubs.js";
+import { shirts } from "./data/shirts.js";
 
 const introScreen = document.getElementById("intro-screen");
 const gameScreen = document.getElementById("game-screen");
