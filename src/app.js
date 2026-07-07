@@ -89,11 +89,10 @@ const times = [
 function drawClub() {
   const c = clubs[Math.floor(rng() * clubs.length)];
   const time = times[Math.floor(rng() * times.length)];
-  return { time, name: c.name, flag: c.flag, tier: c.tier ?? 3 };
+  return { time, name: c.name, flag: c.flag, tier: c.tier ?? 3, color: c.color || "#f2a93b" };
 }
 
 function tierClassFor(tier) {
-  if (tier <= 1) return "tier-1";
   if (tier === 2) return "tier-2";
   if (tier === 3) return "tier-3";
   return "tier-4";
@@ -219,12 +218,21 @@ async function* runCareer() {
     unsealPack(html, tierClassFor(draw.tier));
     age += draw.time;
     addRoadStop(startAge, age - 1, draw.name, draw.flag, tierClassFor(draw.tier));
-    results.stops.push({ startAge, endAge: age - 1, name: draw.name, flag: draw.flag });
+    results.stops.push({
+      startAge,
+      endAge: age - 1,
+      name: draw.name,
+      flag: draw.flag,
+      color: draw.color,
+      duration: age - startAge,
+    });
     setAge(age - 1);
     yield { label: "PRÓXIMO CLUBE" };
   }
 
   ageValueEl.classList.remove("is-live");
+  
+  results.idolClub = computeIdolClub(results.stops);
 
   sealPack("Sorteando N°/posição…", "🎽");
   await sleep(0.6);
@@ -365,6 +373,15 @@ function trophyChip(label, count) {
   return `<span class="trophy-chip${won ? " won" : ""}">${label}: ${won ? count : "—"}</span>`;
 }
 
+function computeIdolClub(stops) {
+  const totals = {};
+  stops.forEach((s) => {
+    if (!totals[s.name]) totals[s.name] = { name: s.name, flag: s.flag, color: s.color, years: 0 };
+    totals[s.name].years += s.duration;
+  });
+  return Object.values(totals).sort((a, b) => b.years - a.years)[0];
+}
+
 function finalize() {
   finalVerdict.textContent = verdictFor(results);
   const lastAge = results.stops.length ? results.stops[results.stops.length - 1].endAge : 17;
@@ -457,12 +474,12 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.closePath();
 }
 
-function drawJersey(ctx, cx, topY, w, number, name) {
+function drawJersey(ctx, cx, topY, w, number, name, color = "#FFDF00") {
   const h = w * 1.1;
   const x = cx - w / 2;
   ctx.save();
   ctx.translate(x, topY);
-  ctx.fillStyle = "#142a21";
+  ctx.fillStyle = color;
   ctx.strokeStyle = "#f2a93b";
   ctx.lineWidth = 3;
   ctx.beginPath();
@@ -560,7 +577,12 @@ async function generateCareerImage(includeSeed) {
 
   y += 20;
   const jerseyTop = y;
-  drawJersey(ctx, W / 2, jerseyTop, 130, results.shirtNum ?? "-", currentPlayerName);
+  drawJersey(ctx, W / 2, jerseyTop, 130, results.shirtNum ?? "-", currentPlayerName, results.idolClub?.color);
+  if (results.idolClub) {
+    ctx.fillStyle = "#7fa08e";
+    ctx.font = "600 13px sans-serif";
+    ctx.fillText(`Ídolo do ${results.idolClub.flag} ${results.idolClub.name}`, W / 2, jerseyTop + 130 * 1.1 + 50);
+  }
   ctx.fillStyle = "#f3f0e6";
   ctx.font = '600 20px "Rajdhani", sans-serif';
   ctx.fillText(results.shirtPos ?? "-", W / 2, jerseyTop + 130 * 1.1 + 28);

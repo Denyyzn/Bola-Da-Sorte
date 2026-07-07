@@ -25,7 +25,8 @@ export const shirts = [
   { num: 10, pos: "MEI" },
   { num: 10, pos: "PE" },
   { num: 10, pos: "PD" },
+  { num: 10, pos: "CA" },
 
   { num: 11, pos: "PE" },
-  { num: 11, pos: "PD" }
+  { num: 11, pos: "PD" },
 ]
