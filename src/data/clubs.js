@@ -46,47 +46,32 @@ export const clubs = [
   { name: "Bayer Leverkusen", flag: "🇩🇪", europe: true, tier: 4, color: "#E32219" },
   { name: "RB Leipzig", flag: "🇩🇪", europe: true, tier: 4, color: "#DD013F" },
   { name: "Frankfurt", flag: "🇩🇪", europe: true, tier: 4, color: "#E10012" },
-  { name: "Stuttgart", flag: "🇩🇪", europe: true, tier: 3, color: "#FFFFFF" },
-  { name: "Wolfsburg", flag: "🇩🇪", europe: true, tier: 3, color: "#65B32E" },
-  { name: "Freiburg", flag: "🇩🇪", europe: true, tier: 3, color: "#D11C24" },
 
 // France
   { name: "PSG", flag: "🇫🇷", europe: true, tier: 5, color: "#001C58" },
-  { name: "Olympique de Marseille", flag: "🇫🇷", europe: true, tier: 4, color: "#26A6E1" },
-  { name: "Olympique Lyonnais", flag: "🇫🇷", europe: true, tier: 4, color: "#FFFFFF" },
+  { name: "Marseille", flag: "🇫🇷", europe: true, tier: 4, color: "#26A6E1" },
+  { name: "Lyon", flag: "🇫🇷", europe: true, tier: 4, color: "#FFFFFF" },
   { name: "Monaco", flag: "🇫🇷", europe: true, tier: 4, color: "#E2001A" },
   { name: "Lille", flag: "🇫🇷", europe: true, tier: 4, color: "#E01E26" },
   { name: "Lens", flag: "🇫🇷", europe: true, tier: 3, color: "#E30613" },
-  { name: "Nice", flag: "🇫🇷", europe: true, tier: 3, color: "#E21118" },
-  { name: "Rennais", flag: "🇫🇷", europe: true, tier: 3, color: "#E30613" },
-  { name: "Bordeaux", flag: "🇫🇷", europe: true, tier: 3, color: "#1B2A4A" },
-  { name: "Strasbourg", flag: "🇫🇷", europe: true, tier: 2, color: "#005CA9" },
-  { name: "Nantes", flag: "🇫🇷", europe: true, tier: 2, color: "#FFF200" },
 
 // Portugal
   { name: "Benfica", flag: "🇵🇹", europe: true, tier: 5, color: "#E30613" },
   { name: "Porto", flag: "🇵🇹", europe: true, tier: 5, color: "#005CA9" },
   { name: "Sporting", flag: "🇵🇹", europe: true, tier: 5, color: "#008057" },
   { name: "Braga", flag: "🇵🇹", europe: true, tier: 4, color: "#D1121A" },
-  { name: "Boavista", flag: "🇵🇹", europe: true, tier: 3, color: "#FFFFFF" },
-  { name: "Estoril Praia", flag: "🇵🇹", europe: true, tier: 2, color: "#FFF200" },
 
 // Holanda
   { name: "Ajax", flag: "🇳🇱", europe: true, tier: 5, color: "#FFFFFF" },
   { name: "PSV", flag: "🇳🇱", europe: true, tier: 4, color: "#E2001A" },
-  { name: "Alkmaar", flag: "🇳🇱", europe: true, tier: 3, color: "#E30613" },
-  { name: "Twente", flag: "🇳🇱", europe: true, tier: 2, color: "#E30613" },
   
 // Bélgica
   { name: "Club Brugge", flag: "🇧🇪", europe: true, tier: 4, color: "#002D62" },
-  { name: "Anderlecht", flag: "🇧🇪", europe: true, tier: 4, color: "#4B2E83" },
   { name: "Gent", flag: "🇧🇪", europe: true, tier: 3, color: "#004B93" },
-  { name: "Royal Antwerp", flag: "🇧🇪", europe: true, tier: 3, color: "#DA291C" },
 
 // Turquia
   { name: "Galatasaray", flag: "🇹🇷", europe: true, tier: 5, color: "#A32638" },
   { name: "Fenerbahçe", flag: "🇹🇷", europe: true, tier: 4, color: "#00235D" },
-  { name: "Başakşehir", flag: "🇹🇷", europe: true, tier: 2, color: "#ED5C23" },
   
 // Brasil
   { name: "Flamengo", flag: "🇧🇷", europe: false, tier: 5, color: "#C8102E" },
@@ -94,18 +79,15 @@ export const clubs = [
   { name: "São Paulo", flag: "🇧🇷", europe: false, tier: 4, color: "#FFFFFF" },
   { name: "Corinthians", flag: "🇧🇷", europe: false, tier: 4, color: "#FFFFFF" },
   { name: "Fluminense", flag: "🇧🇷", europe: false, tier: 3, color: "#800020" },
-  { name: "Grêmio", flag: "🇧🇷", europe: false, tier: 3, color: "#0D80BF" },
   { name: "Internacional", flag: "🇧🇷", europe: false, tier: 3, color: "#E30613" },
   { name: "Atlético Mineiro", flag: "🇧🇷", europe: false, tier: 3, color: "#000000" },
   { name: "Cruzeiro", flag: "🇧🇷", europe: false, tier: 3, color: "#003399" },
   { name: "Botafogo", flag: "🇧🇷", europe: false, tier: 3, color: "#000000" },
   { name: "Vasco da Gama", flag: "🇧🇷", europe: false, tier: 2, color: "#000000" },
   { name: "Santos", flag: "🇧🇷", europe: false, tier: 2, color: "#FFFFFF" },
-  { name: "Athletico Paranaense", flag: "🇧🇷", europe: false, tier: 1, color: "#C8102E" },
   { name: "Bahia", flag: "🇧🇷", europe: false, tier: 2, color: "#0056A3" },
   { name: "RB Bragantino", flag: "🇧🇷", europe: false, tier: 2, color: "#FFFFFF" },
   { name: "Vitória", flag: "🇧🇷", europe: false, tier: 1, color: "#BE121A" },
-  { name: "Sport Recife", flag: "🇧🇷", europe: false, tier: 1, color: "#C8102E" },
   
 // Argentina
   { name: "Boca Juniors", flag: "🇦🇷", europe: false, tier: 5, color: "#132257" },
@@ -115,34 +97,21 @@ export const clubs = [
   { name: "San Lorenzo", flag: "🇦🇷", europe: false, tier: 4, color: "#002A54" },
   { name: "Estudiantes", flag: "🇦🇷", europe: false, tier: 3, color: "#E30613" },
   { name: "Newell's Old Boys", flag: "🇦🇷", europe: false, tier: 3, color: "#000000" },
-  { name: "Rosario Central", flag: "🇦🇷", europe: false, tier: 3, color: "#003399" },
-  { name: "Argentinos Juniors", flag: "🇦🇷", europe: false, tier: 2, color: "#DA291C" },
   
 // México
   { name: "América", flag: "🇲🇽", europe: false, tier: 4, color: "#FFFDD0" },
-  { name: "Chivas", flag: "🇲🇽", europe: false, tier: 3, color: "#C8102E" },
-  { name: "Tigres", flag: "🇲🇽", europe: false, tier: 2, color: "#FFD100" },
   { name: "Monterrey", flag: "🇲🇽", europe: false, tier: 2, color: "#00204A" },
-  { name: "Cruz Azul", flag: "🇲🇽", europe: false, tier: 2, color: "#005CA9" },
-  { name: "Pumas", flag: "🇲🇽", europe: false, tier: 1, color: "#1D2547" },
   
 // Estados Unidos
   { name: "Inter Miami", flag: "🇺🇸", europe: false, tier: 4, color: "#F4B2CE" },
-  { name: "Seattle Sounders", flag: "🇺🇸", europe: false, tier: 3, color: "#658D1B" },
-  { name: "Atlanta United", flag: "🇺🇸", europe: false, tier: 3, color: "#800020" },
-  { name: "New York City FC", flag: "🇺🇸", europe: false, tier: 2, color: "#6CACE4" },
   
 // Arábia Saudita
   { name: "Al Hilal", flag: "🇸🇦", europe: false, tier: 4, color: "#0047A5" },
   { name: "Al Nassr", flag: "🇸🇦", europe: false, tier: 4, color: "#FFF200" },
-  { name: "Al Ahli", flag: "🇸🇦", europe: false, tier: 3, color: "#00723F" },
   
 // Outros países
-  { name: "RB Salzburg", flag: "🇦🇹", europe: true, tier: 4, color: "#FFFFFF" },
   { name: "Olympiacos", flag: "🇬🇷", europe: true, tier: 3, color: "#D1121A" },
-  { name: "Shakhtar Donetsk", flag: "🇺🇦", europe: true, tier: 4, color: "#FF7300" },
   { name: "Al Ahly", flag: "🇪🇬", europe: false, tier: 3, color: "#DC052D" },
-  { name: "Urawa Red Diamonds", flag: "🇯🇵", europe: false, tier: 3, color: "#E30613" },
   { name: "Pyramids", flag: "🇪🇬", europe: false, tier: 4, color: "#1D3557" },
   { name: "Jeunesse", flag: "🇩🇿", europe: false, tier: 3, color: "#007A3D" },
 ]
